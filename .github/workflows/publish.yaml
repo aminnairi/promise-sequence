@@ -21,4 +21,4 @@ jobs:
       - name: Token
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.TOKEN }}" > .npmrc
       - name: Publish
-        run: make publish
+        run: 'make publish || true'
