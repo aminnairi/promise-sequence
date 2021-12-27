@@ -2,6 +2,8 @@
 
 Execute a sequence of functions that return a promise one after the other
 
+![Vulnerabilities](https://badgen.net/snyk/aminnairi/promise-sequence)
+
 ## Requirements
 
 - Node
