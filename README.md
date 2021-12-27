@@ -147,3 +147,19 @@ Hello, John DOE. What is your age? 42
 So, John DOE, you are 42 years old. What about your email? john@doe.com
 To sum up, John DOE, you are 42 years old and your email is john@doe.com.
 ```
+
+## Changelog
+
+See [`CHANGELOG.md`](https://github.com/aminnairi/promise-sequence/blob/production/CHANGELOG.md).
+
+## Contributing
+
+See [`CONTRIBUTING.md`](https://github.com/aminnairi/promise-sequence/blob/production/CONTRIBUTING.md).
+
+## License
+
+See [`LICENSE`](https://github.com/aminnairi/promise-sequence/blob/production/LICENSE).
+
+## Code of conduct
+
+See [`CODE_OF_CONDUCT.md`](https://github.com/aminnairi/promise-sequence/blob/production/CODE_OF_CONDUCT.md).
