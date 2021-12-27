@@ -1,0 +1,33 @@
+{
+  "author": {
+    "name": "Amin NAIRI",
+    "url": "https://github.com/aminnairi"
+  },
+  "bugs": {
+    "url": "https://github.com/aminnairi/promise-sequence/issues"
+  },
+  "description": "Execute a sequence of functions that return a promise one after the other",
+  "files": [
+    "build/index.mjs"
+  ],
+  "homepage": "https://github.com/aminnairi/promise-sequence#readme",
+  "keywords": [
+    "promise",
+    "sequence",
+    "function"
+  ],
+  "license": "GPL-3.0-or-later",
+  "main": "build/index.mjs",
+  "module": "build/inde.mjs",
+  "name": "@aminnairi/promise-sequence",
+  "version": "0.1.0",
+  "sideEffects": false,
+  "scripts": {
+    "test": "node index.test.mjs",
+    "build": "rollup --config rollup.config.js"
+  },
+  "devDependencies": {
+    "rollup": "2.62.0",
+    "rollup-plugin-terser": "7.0.2"
+  }
+}
