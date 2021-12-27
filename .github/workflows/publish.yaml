@@ -1,0 +1,24 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  publish:
+    name: Publish the library on NPM
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test
+        run: make test
+      - name: Install
+        run: make install
+      - name: Build
+        run: make build
+      - name: Token
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.TOKEN }}" > .npmrc
+      - name: Publish
+        run: make publish
