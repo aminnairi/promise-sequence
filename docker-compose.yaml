@@ -1,12 +1,16 @@
 version: "3"
 
 services:
-  npm:
-    image: node:17.0.0
+  node:
+    image: node:17.0.0-alpine
     user: node
     tty: true
     stdin_open: true
-    entrypoint: npm
+    entrypoint: node
     working_dir: /home/node
     volumes:
       - .:/home/node
+
+  npm:
+    extends: node
+    entrypoint: npm
