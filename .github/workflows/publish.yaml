@@ -12,10 +12,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Test
-        run: make test
       - name: Install
         run: make install
+      - name: Test
+        run: make test
       - name: Build
         run: make build
       - name: Token
