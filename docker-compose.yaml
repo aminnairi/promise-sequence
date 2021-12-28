@@ -1,16 +1,26 @@
+# Version of the Docker Compose API to use
 version: "3"
 
 services:
+  # docker-compose run --rm node --version
   node:
+    # Image to use for the node service
     image: node:17.0.0-alpine
+    # User to use for the node service
     user: node
+    # Enable interactive shell
     tty: true
+    # Allow inputs from the terminal
     stdin_open: true
+    # Prefix for all commands
     entrypoint: node
+    # Current working directory when issueing commands
     working_dir: /home/node
+    # Local filesystem paths to map to the container
     volumes:
       - .:/home/node
 
+  # docker-compose run --rm npm --version
   npm:
     extends: node
     entrypoint: npm
