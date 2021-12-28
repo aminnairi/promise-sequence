@@ -22,6 +22,9 @@
   "name": "@aminnairi/promise-sequence",
   "version": "0.1.0",
   "sideEffects": false,
+  "engine": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
     "test": "node index.test.mjs",
     "build": "rollup --config rollup.config.js"
