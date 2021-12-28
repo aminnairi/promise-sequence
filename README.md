@@ -2,7 +2,7 @@
 
 Execute a sequence of functions that return a promise one after the other
 
-[![Version](https://badgen.net/badge/npm/0.1.0/green)](https://www.npmjs.com/package/@aminnairi/promise-sequence/v/0.1.0) [![Size](https://badgen.net/bundlephobia/minzip/@aminnairi/promise-sequence@0.1.0)](https://bundlephobia.com/package/@aminnairi/promise-sequence@0.1.0) [![Treeshaking](https://badgen.net/bundlephobia/tree-shaking/@aminnairi/promise-sequence@0.1.0)](https://bundlephobia.com/package/@aminnairi/promise-sequence@0.1.0) [![Dependencies](https://badgen.net/bundlephobia/dependency-count/@aminnairi/promise-sequence@0.1.0)](https://www.npmjs.com/package/@aminnairi/promise-sequence/v/0.1.0?activeTab=dependencies) ![Vulnerabilities](https://badgen.net/snyk/aminnairi/promise-sequence)
+[![Version](https://badgen.net/badge/npm/0.2.0/green)](https://www.npmjs.com/package/@aminnairi/promise-sequence/v/0.2.0) [![Size](https://badgen.net/bundlephobia/minzip/@aminnairi/promise-sequence@0.2.0)](https://bundlephobia.com/package/@aminnairi/promise-sequence@0.2.0) [![Treeshaking](https://badgen.net/bundlephobia/tree-shaking/@aminnairi/promise-sequence@0.2.0)](https://bundlephobia.com/package/@aminnairi/promise-sequence@0.2.0) [![Dependencies](https://badgen.net/bundlephobia/dependency-count/@aminnairi/promise-sequence@0.2.0)](https://www.npmjs.com/package/@aminnairi/promise-sequence/v/0.2.0?activeTab=dependencies) ![Vulnerabilities](https://badgen.net/snyk/aminnairi/promise-sequence)
 
 ## Requirements
 

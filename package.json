@@ -20,7 +20,7 @@
   "main": "build/index.mjs",
   "module": "build/inde.mjs",
   "name": "@aminnairi/promise-sequence",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "sideEffects": false,
   "engine": {
     "node": ">=14.0.0"
