@@ -1,31 +1,54 @@
+import {describe, it} from "mocha";
+import {expect} from "chai";
 import {sequence} from "./index.mjs";
 
-sequence([
-  () => Promise.resolve("1"),
-  ([first]) => Promise.resolve(`${first}2`),
-  ([first, second]) => Promise.resolve(`${first}${second}3`)
-]).then(([first, second, third]) => {
-  if (first !== "1") {
-    return Promise.reject(new Error(`${JSON.stringify(first)} should equal to ${JSON.stringify(1)}`));
-  }
+const resolve = value => Promise.resolve(value);
 
-  if (second !== "12") {
-    return Promise.reject(new Error(`${JSON.stringify(second)} should equal to ${JSON.stringify(12)}`));
-  }
+describe("sequence", () => {
+  it("should return an error if the first argument is not an array", () => {
+    return sequence(null).then(() => {
+      return expect.fail("Unexpected value");
+    }).catch(({name, message}) => {
+      expect(name).to.equal("TypeError");
+      expect(message).to.equal("callbacks should be an array in sequence(callbacks)");
+    });
+  });
 
-  if (third !== "1123") {
-    return Promise.reject(new Error(`${JSON.stringify(third)} should equal to ${JSON.stringify("1123")}`));
-  }
-});
+  it("should return an error if the first argument is not an array of callbacks", () => {
+    return sequence([null, null, null]).then(() => {
+      return expect.fail("Unexpected value");
+    }).catch(({name, message}) => {
+      expect(name).to.equal("TypeError");
+      expect(message).to.equal("callbacks should be an array of functions in sequence(callbacks)");
+    });
+  });
 
-sequence([
-  () => Promise.resolve("1"),
-  () => Promise.resolve("2"),
-  () => Promise.reject(new Error("error"))
-]).then(() => {
-  return Promise.reject(new Error("Unexpected"));
-}).catch(({message}) => {
-  if (message !== "error") {
-    return Promise.reject(new Error(`${JSON.stringify("Unexpected")} should equal to ${JSON.stringify("error")}`));
-  }
+  it("should return an error if the first argument is not an array of callbacks returning a promise", () => {
+    return sequence([() => null, () => null, () => null]).then(() => {
+      return expect.fail("Unexpected value");
+    }).catch(({name, message}) => {
+      expect(name).to.equal("TypeError");
+      expect(message).to.equal("callbacks should be an array of functions returning a promise in sequence(callbacks)");
+    });
+  });
+
+  it("should return the sequence correctly", () => {
+    return sequence([
+      () => resolve(1),
+      () => resolve(2),
+      () => resolve(3)
+    ]).then(value => {
+      expect(value).to.deep.equal([1, 2, 3]);
+    });
+  });
+
+  it("should return the sequence with accumulation correctly", () => {
+    return sequence([
+      () => resolve(1),
+      ([first]) => resolve(2 + first),
+      ([first, second]) => resolve(3 + first + second)
+    ]).then(value => {
+      expect(value).to.deep.equal([1, 3, 7]);
+    });
+  });
 });
