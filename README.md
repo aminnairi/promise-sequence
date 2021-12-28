@@ -2,7 +2,7 @@
 
 Execute a sequence of functions that return a promise one after the other
 
-![Vulnerabilities](https://badgen.net/snyk/aminnairi/promise-sequence)
+[![Size](https://badgen.net/bundlephobia/minzip/@aminnairi/promise-sequence@0.1.0)](https://bundlephobia.com/package/@aminnairi/promise-sequence@0.1.0) ![Vulnerabilities](https://badgen.net/snyk/aminnairi/promise-sequence)
 
 ## Requirements
 
